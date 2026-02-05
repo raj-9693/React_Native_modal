@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity,TextFile } from "react-native";
 import './practice'
 
 
@@ -217,43 +217,37 @@ const App=()=>{
 
 
 
-const[nameText,setName]=useState('')
-const[inputText,setInput]=useState('')
-
-const[AgeText,setage]=useState('')
-const[inputAge,setAge]=useState('')
-
-const[mallName,setMall]=useState()
+const[Evenodd,setEvenodd]=useState(' ')
+const[InputEvenodd,setInputEvenodd]=useState('')
 
 const clicks=()=>{
-  // setDeta("Hello Raj ")
-  // console.log(Data)
-     setName(inputText)
-     setage(inputAge)
-}
-const change=()=>{
-  var mall="laxmi"
-  setMall(mall)
 
+const result= InputEvenodd
+
+if(result%2==0){
+  setEvenodd("Even number")
+}else{
+  setEvenodd("odd Number")
 }
+}
+
 
 return(
 <View style={{marginTop:50}}>
-  <Text style={{alignSelf:'center'}}>{nameText}</Text>
-  <Text style={{alignSelf:'center'}}>{ AgeText}</Text>
+
+<TextInput  onChangeText={setInputEvenodd} style={Styles.textinputdesion}placeholder="Enter a Name "></TextInput>
+
+  
 
   <TouchableOpacity onPress={clicks} style={Styles.ButtonDesion}>
     <Text style={{color:'white',fontSize:20, fontWeight:'bold',alignSelf:'center',}}>Click me</Text>
   </TouchableOpacity>
 
+  <Text style={{alignSelf:'center'}}>{Evenodd}</Text>
   
-  <TextInput  onChangeText={setInput} style={Styles.textinputdesion}placeholder="Enter a Name "></TextInput>
-  <TextInput  onChangeText={setAge} style={Styles.textinputdesion}placeholder="Enter a Age "></TextInput>
-  <Text style={{alignSelf:'center',color:'red'}}>{mallName}</Text>
+ 
+  
 
-<TouchableOpacity style={Styles.box} onPress={change}>
-
-</TouchableOpacity >
 
 
 </View>
